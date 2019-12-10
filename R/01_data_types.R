@@ -59,8 +59,14 @@ cps_skools %>% as.data.frame() # note: isn't that non-sensical?
 #    Instead, you must store it by using the assignment operator: <-.
 
 cps_skools %>% nrow() # note: the console returned 661
+cps_skools %>% ncol()
 
 n_row <- cps_skools %>% nrow() # note: the console returned nothing.
+
+cps_skools %>%
+  rename("school_id" = "School_ID") %>%
+  filter(Is_High_School=="Y") %>%
+  select(school_id, Is_High_School)
 
 # 5. Wait. Slow down. What the heck is %>%? --------
 #
